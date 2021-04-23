@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Entities
 {
-    class Review : EntityBase
+    public class Review : EntityBase
     {
         public string Description { get; set; }
-       
+
         public int Rating { get; set; }
-        
-       
+
+
         public Guid BookId { get; set; }
         public Book Book { get; set; }
+
+        public Guid TenantId { get; set; }
+        public  Tenant Tenant { get; set; }
     }
 }

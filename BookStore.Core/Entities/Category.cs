@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Entities
 {
-    class Category : EntityBase
+    public class Category : EntityBase
     {
         public string Name { get; set; }
         
         public ICollection<Book> Books { get; set; }
+        public Guid TenantId { get; set; }
+        public  Tenant Tenant { get; set; }
     }
 }

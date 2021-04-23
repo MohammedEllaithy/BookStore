@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Entities
 {
-    class Tenant : EntityBase
+    public class Tenant : EntityBase
     {
         
         public string Name { get; set; }

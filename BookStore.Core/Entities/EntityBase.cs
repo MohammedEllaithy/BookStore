@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Entities
 {
-    class EntityBase
+    public class EntityBase
     {
         public Guid Id { get; set; }
     }

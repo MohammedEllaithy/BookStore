@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Entities
 {
-    class Author : EntityBase
+    public class Author : EntityBase
     {
         
         
@@ -17,5 +17,7 @@ namespace BookStore.Core.Entities
         
        
         public ICollection<Book> Books { get; set; }
+        public Guid TenantId { get; set; }
+        public  Tenant Tenant { get; set; }
     }
 }
