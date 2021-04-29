@@ -6,6 +6,10 @@ namespace BookStore.Infrastructure
 {
     public class BookStoreContext : DbContext
     {
+        public BookStoreContext()
+        {
+
+        }
         /// <summary>
         /// Constructor of BookStoreContext class to pass options to the DbContext base class
         /// <param name="options">Options of database to be passed to the ORM</param>

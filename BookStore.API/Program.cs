@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,7 +14,31 @@ namespace BookStore.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+           // CreateHostBuilder(args).Build().Run();
+            //var config = new ConfigurationBuilder()
+            //.SetBasePath(Directory.GetCurrentDirectory())
+            //.AddJsonFile("hosting.json", optional: true)
+            //.Build();
+
+            //var host = new WebHostBuilder()
+            //    .UseConfiguration(config)
+            //    .UseContentRoot(Directory.GetCurrentDirectory())
+            //    .UseKestrel()
+            //    .UseIISIntegration()
+            //    .UseStartup<Startup>()
+            //    .Build();
+            //host.Run();
+            var host = new WebHostBuilder()
+               .UseKestrel()
+               .UseContentRoot(Directory.GetCurrentDirectory())
+               .UseUrls("http://localhost:5000", "http://localhost:5001", "http://localhost:5002")
+               .UseIISIntegration()
+               .UseStartup<Startup>()
+               .Build();
+
+            host.Run();
+
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

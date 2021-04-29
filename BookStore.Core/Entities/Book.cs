@@ -8,7 +8,8 @@ namespace BookStore.Core.Entities
 {
     public class Book :EntityBase
     {
-        
+
+        public Guid Id { get; set; }
         public string Name { get; set; }
        
         public Category Category { get; set; }
