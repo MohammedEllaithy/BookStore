@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BookStore.Core.Entities;
 using BookStore.Infrastructure.SchemaDefenitions;
+using System;
 
 namespace BookStore.Infrastructure
 {

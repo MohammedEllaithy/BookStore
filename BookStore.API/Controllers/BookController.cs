@@ -26,7 +26,7 @@ namespace BookStore.API.Controllers
             _tenant = tenant;
         }
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public ActionResult Index()
         {
             if (!ModelState.IsValid)
             {
@@ -37,14 +37,33 @@ namespace BookStore.API.Controllers
 
                 Books = _book.Entity.GetAll(e => e.TenantId == _tenant.Id).ToList()
             };
+
+
             return View(tenantViewModel);
 
 
         }
+
+        // GET: Book/Details/5
+        public IActionResult Details(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var book = _book.Entity.GetByIdAsync(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return View(book);
+        }
         // GET: /Book/Create
         public ActionResult Create()
         {
-          
+         
             return View();
         }
 
@@ -68,7 +87,7 @@ namespace BookStore.API.Controllers
             return View(book);
         }
         // Get Book Details in Edit Page
-        public async Task<ActionResult> Edit(int id)
+        public async Task<ActionResult> Edit(Guid id)
         {
             Book Book = await _book.Entity.GetByIdAsync(id);
             return View(Book);
@@ -76,13 +95,13 @@ namespace BookStore.API.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Book Book)
+        public ActionResult Edit(Guid id, Book book)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _book.Entity.Update(Book);
+                    _book.Entity.Update(book);
                     _book.save();
                     return RedirectToAction("Index");
                 }
@@ -91,7 +110,7 @@ namespace BookStore.API.Controllers
             {
                 ModelState.AddModelError("", "Unable to save changes.");
             }
-            return View(Book);
+            return View(book);
         }
 
         // GET: /Book/Delete/5
@@ -106,8 +125,8 @@ namespace BookStore.API.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            // Book Book = await _book.Entity.GetByIdAsync(id);
-            _book.Entity.Delete(id);
+            var book = await _book.Entity.GetByIdAsync(id);
+            _book.Entity.Delete(book);
             _book.save();
             return RedirectToAction("Index");
         }

@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@*@model BookViewModel*@
+
 @model TenantViewModel
 @inject BookStore.Core.Entities.Tenant Tenant;
 @{
@@ -12,9 +12,9 @@
 <h1 class="center-block">Host Is : >>> @Tenant.Domain</h1>
 <h3>@Tenant.Name</h3>
 @*@foreach (var item in Model.Books)
-{
-    <h2>@item.Name</h2>
-}*@<button  asp-action="Create" type="button" class="btn btn-success">Add New Book</button>
+    {
+        <h2>@item.Name</h2>
+    }*@<button asp-action="Create" type="button" class="btn btn-success">Add New Book</button>
 <table class="table table-dark">
     <thead>
         <tr>
@@ -22,24 +22,27 @@
             <th scope="col">Price</th>
             <th scope="col">Category</th>
             <th scope="col">Tenant Name</th>
-            <th scope ="col">Actions</th>
-</tr>
+            <th scope="col">Actions</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Books)
         {
-        <tr>
+            <tr>
 
-            <td>@item.Name</td>
-            <td>@item.Price</td>
-            <td>@item.Category?.Name</td>
-            <td>@item.Tenant.Name</td>
-            <td>
-                <button asp-action="Details" asp-route-id="@item.Id" type="button"class="btn btn-outline-info">Info</button>
-                <button asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-outline-primary">Edit</button>
-                <button asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Category?.Name</td>
+                <td>@item.Tenant.Name</td>
+                <td>
+                    <button asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-outline-info">Info</button>
+                    <button asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-outline-primary">Edit</button>
+                    <button asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
         }
+       
+        
+        
     </tbody>
 </table>
