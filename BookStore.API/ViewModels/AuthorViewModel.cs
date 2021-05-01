@@ -9,6 +9,5 @@ namespace BookStore.API.ViewModels
     public class AuthorViewModel
     {
         public Guid Id { get; set; }
-        public List<Author> Authors { get; set; }
     }
 }

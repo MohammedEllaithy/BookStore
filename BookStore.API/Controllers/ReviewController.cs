@@ -39,7 +39,7 @@ namespace BookStore.API.Controllers
         }
         // GET: ReviewController/Details/5
    
-        public IActionResult Details(Guid? id)
+        public IActionResult Details(Guid id)
         {
             if (id == null)
             {

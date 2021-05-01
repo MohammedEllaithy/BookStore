@@ -51,7 +51,7 @@ namespace BookStore.API
             services.AddDbContext<BookStoreContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BookStoreDB"));
-                
+
             });
             services.AddMvc();
             services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));

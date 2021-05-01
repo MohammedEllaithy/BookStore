@@ -27,7 +27,7 @@ namespace BookStore.Infrastructure.Repositories
             table.Add(entity);
         }
 
-        public async void  Delete(object id)
+        public async void  Delete(Guid id)
         {
             T existing = await GetByIdAsync(id);
             table.Remove(existing);
@@ -65,7 +65,7 @@ namespace BookStore.Infrastructure.Repositories
 
      
 
-        public async Task<T> GetByIdAsync(object id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
             return await table.FindAsync(id);
         }

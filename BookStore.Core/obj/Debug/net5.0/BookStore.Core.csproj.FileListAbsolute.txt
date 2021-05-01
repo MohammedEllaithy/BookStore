@@ -2,6 +2,7 @@ C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\bin\Debug\net5.0\BookSto
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\bin\Debug\net5.0\BookStore.Core.dll
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\bin\Debug\net5.0\ref\BookStore.Core.dll
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\bin\Debug\net5.0\BookStore.Core.pdb
+C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\obj\Debug\net5.0\BookStore.Core.csprojAssemblyReference.cache
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\obj\Debug\net5.0\BookStore.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\obj\Debug\net5.0\BookStore.Core.AssemblyInfoInputs.cache
 C:\Users\Ellaithy\source\repos\BookStore\BookStore.Core\obj\Debug\net5.0\BookStore.Core.AssemblyInfo.cs

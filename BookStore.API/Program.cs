@@ -12,22 +12,12 @@ namespace BookStore.API
 {
     public class Program
     {
+        private static IConfiguration config;
+
         public static void Main(string[] args)
         {
-           // CreateHostBuilder(args).Build().Run();
-            //var config = new ConfigurationBuilder()
-            //.SetBasePath(Directory.GetCurrentDirectory())
-            //.AddJsonFile("hosting.json", optional: true)
-            //.Build();
+            // CreateHostBuilder(args).Build().Run();
 
-            //var host = new WebHostBuilder()
-            //    .UseConfiguration(config)
-            //    .UseContentRoot(Directory.GetCurrentDirectory())
-            //    .UseKestrel()
-            //    .UseIISIntegration()
-            //    .UseStartup<Startup>()
-            //    .Build();
-            //host.Run();
             var host = new WebHostBuilder()
                .UseKestrel()
                .UseContentRoot(Directory.GetCurrentDirectory())

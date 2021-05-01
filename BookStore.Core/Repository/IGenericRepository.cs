@@ -27,7 +27,7 @@ namespace BookStore.Core.Repository
         /// </summary>
         /// <typeparam name="T">string</typeparam>
         /// <returns>Single entity</returns>
-        Task<T> GetByIdAsync(object id);
+        Task<T> GetByIdAsync(Guid id);
         /// <summary>
         /// Add new entity async
         /// </summary>
@@ -49,6 +49,6 @@ namespace BookStore.Core.Repository
         /// <typeparam name="T">Entity Type</typeparam>
         /// <param name="entity">Entity</param>
         /// <returns>Number of state entries written to the database.</returns>
-        void Delete(object id);
+        void Delete(Guid id);
     }
 }
